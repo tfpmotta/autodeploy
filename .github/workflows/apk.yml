@@ -49,15 +49,10 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: "stable"
-   #   - run: flutter doctor -v
         
       - run: flutter pub get
 
-      - run: flutter build ios --release
-
-
-    #  - name: Build APP BUNDLE
-    #    run: flutter build appbundle
+      - run: flutter build ios
 
  #     - name: Create Release
  #       uses: ncipollo/release-action@v1.10.0
