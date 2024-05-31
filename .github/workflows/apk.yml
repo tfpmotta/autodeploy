@@ -81,17 +81,11 @@ jobs:
           cd ..
           zip -r app.ipa Payload
 
-      - run: |
-          ls -la build/ios/iphoneos/
-          ls -la build/ios/iphoneos/Runner.app
-          ls Payload
-      
-
       - name: Upload iOS
         uses: actions/upload-artifact@v3.1.0
         with:
           name: ios
-          path: build/ios/iphoneos/*.app
+          path: build/ios/iphoneos/app.ipa
 
 
   create-release:
