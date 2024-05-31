@@ -74,6 +74,9 @@ jobs:
       - name: Build iOS
         run: flutter build ios
 
+      - run: ls -la build/ios/iphoneos/
+      - run: ls -la build/ios/iphoneos/Runner.app
+
       - name: Upload iOS
         uses: actions/upload-artifact@v3.1.0
         with:
