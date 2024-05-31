@@ -12,9 +12,6 @@ jobs:
 
     steps:
     
-      - name: check Xcode version
-        run: /usr/bin/xcodebuild -version
-        
       - uses: actions/checkout@v3
 
       - name: Install the Apple certificate and provisioning profile
@@ -49,10 +46,11 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: "stable"
+          flutter-version: 3.19.6
         
       - run: flutter pub get
 
-      - run: flutter build ios
+      - run: flutter build apk
 
  #     - name: Create Release
  #       uses: ncipollo/release-action@v1.10.0
