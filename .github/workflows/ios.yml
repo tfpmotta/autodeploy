@@ -1,4 +1,4 @@
-name: Build Flutter APK's and App bundle
+name: Build Flutter iOS
 
 on:
   push:
