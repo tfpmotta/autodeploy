@@ -2,7 +2,6 @@ name: Build Flutter iOS
 
 on:
   push:
-    branches: [ios]
 
 jobs:
   build-ios:
@@ -47,37 +46,5 @@ jobs:
       
       - name: Build iOS
         run: |
-          flutter build ios
-          cd build/ios/iphoneos
-          mkdir Payload
-          cd Payload
-          ln -s ../Runner.app
-          cd ..
-          zip -r app.ipa Payload
-
-      - name: Upload iOS
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: ios
-          path: build/ios/iphoneos/app.ipa
-
-  create-release:
-    name: Create Release
-    needs: [build-ios]
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:     
-      - name: Download iOS
-        uses: actions/download-artifact@v3
-        with:
-          name: ios
-          path: build/ios/iphoneos/
-          
-      - name: Create Release
-        uses: ncipollo/release-action@v1.10.0
-        with:
-          artifacts: "build/ios/iphoneos/app.ipa"
-          tag: v0.0.${{ github.run_number }}
-          overwrite: true
-          token: ${{ secrets.AUTODEPLOY_PAT }}
+          flutter build ipa
+          ls build/ios/
