@@ -47,4 +47,4 @@ jobs:
       - name: Build iOS
         run: |
           flutter build ipa --no-codesign
-          ls build/ios/archive/Runner.xcarchive/archive/*
+          ls build/ios/archive/Runner.xcarchive/*
