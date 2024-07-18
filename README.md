@@ -1,5 +1,6 @@
 # autodeploy
 
+```
 YourApp.ipa
 └── Payload/
     └── YourApp.app/
@@ -13,3 +14,5 @@ YourApp.ipa
         │   ├── Info.plist
         │   └── Images.xcassets/
         └── ... (Outros arquivos e diretórios necessários)
+```
+as
